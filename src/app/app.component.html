@@ -12,7 +12,7 @@
           (click)="editar(persona)"
           [class.active]="persona == selectedPersona"
           >
-            <span class="badge bg-primary">{{persona.id}}</span>  {{persona.name}}-{{persona.country}}
+            <span class="badge bg-primary">{{persona.id}}</span>  {{persona.name}}-{{persona.country}}--{{persona.ci}}
           </li>
       </ul>
       <div *ngIf="personaArray.length === 0">
@@ -29,7 +29,10 @@
             <input type="text" [(ngModel)]="selectedPersona.name" placeholder="Inserta un Nombre" class="form-control">
           </div>
           <div class="form-group">
-            <input type="text" [(ngModel)]="selectedPersona.country" placeholder="Inserta un Pais" class="form-control">
+            <input type="text" [(ngModel)]="selectedPersona.country" placeholder="Inserta un Apellido" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="number" [(ngModel)]="selectedPersona.ci" placeholder="Inserta un CI" class="form-control">
           </div>
 
           <button (click)="addOrEdit()" class="btn btn-danger">Enviar</button>
